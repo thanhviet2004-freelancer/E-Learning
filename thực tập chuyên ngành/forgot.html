@@ -85,5 +85,21 @@
       </a>
     </div>
   </div>
+    <script>
+    function handleSubmit() {
+      const email = document.getElementById('email').value.trim();
+      document.getElementById('email-error').style.display = 'none';
+      
+      if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        document.getElementById('email-error').textContent = email ? 'Email không hợp lệ' : 'Vui lòng nhập email';
+        document.getElementById('email-error').style.display = 'block';
+        return;
+      }
+
+      alert(`✉️ Đã gửi liên kết khôi phục mật khẩu đến:\n${email}\n(Vui lòng kiểm tra hộp thư trong 5 phút)`);
+      window.location.href = 'index.html';
+    }
+  </script>
 </body>
+
 </html>
